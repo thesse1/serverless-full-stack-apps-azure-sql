@@ -7,7 +7,7 @@ module.exports = async function (context, req) {
 
     const busData = await pool.request()
         .input("routeId", sql.Int, parseInt(req.query.rid))
-        .input("geofenceId", sql.Int, parseInt(req.query.gid))
+        .input("geofenceId", sql.Int, parseInt(req.query.gid)+1)
         .execute("web.GetMonitoredBusData");        
 
     context.res = {        
