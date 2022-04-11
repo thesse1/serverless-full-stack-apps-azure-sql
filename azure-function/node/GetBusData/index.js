@@ -9,6 +9,8 @@ module.exports = async function (context, myTimer) {
     // Get the routes we want to monitor
     const routes = await GetMonitoredRoutes();
 
+    context.log(`Monitored routes: ${routes}`);
+
     // Get the real-time bus location feed
     const feed = await GetRealTimeFeed();
 
